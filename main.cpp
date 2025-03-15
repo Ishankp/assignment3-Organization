@@ -1,3 +1,7 @@
+//Ishan K. Patel
+//UCFID: 5392748
+
+//Libraries included
 #include <iostream>
 #include <thread>
 #include <vector>
@@ -6,8 +10,9 @@
 #include <chrono>
 #include <algorithm>
 
-// ---------------- PROBLEM 1 (Minotaur's Preasents) ----------------
+//----------------------------------------------//
 
+//PROBLEM 1 
 //Node structure for linked list
 class Node {
 public:
@@ -108,6 +113,7 @@ void runProblem1() {
     std::cout << "Duration = " << duration.count() << " ms\n";
 }
 
+//---------------------------------------//
 //PROBLEM 2
 
 const int NUM_SENSORS = 8;
@@ -119,7 +125,7 @@ std::mutex tempMutex;
 void sensorTask(int sensorID) {
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_int_distribution<int> dist(-100, 70);
+    std::uniform_int_distribution<int> dist(-100, 70); // Temperature range from -100 to 70
     
     for (int i = 0; i < READINGS_PER_HOUR / NUM_SENSORS; i++) {
         std::this_thread::sleep_for(std::chrono::milliseconds(10)); //Simulating sensor delay
